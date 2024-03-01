@@ -19,6 +19,19 @@
     text-align: center; /* Center-align the content within the div */
   }
 
+  .tasks h3 {
+    margin: 0 15px; /* Margin of 0 pixels on the top and bottom, and 15 pixels on the left and right */
+    font-size: 15px;
+  }
+
+  .tasks h1 {
+    margin: 0 15px; /* Margin of 0 pixels on the top and bottom, and 15 pixels on the left and right */
+    font-size: 24px;
+  }
+  .tasks .task-content {
+    margin: 0 20px; /* Adjust margins as needed */
+  }
+
   .hero-image {
     background-image: url('https://history-computer.com/wp-content/uploads/2023/03/shutterstock_2136848509-2048x1536.jpg');
     background-size: cover;
@@ -176,8 +189,6 @@
     <h1>WELCOME TO MY PHP EXERCISES</h2>
   </div>
   
-
-
 <!-- Import Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-hz5Xn+3BsXZ9g7NZ99z5zehYlwT0wq5G2r0PUzPswqVZ2dkvM/E5hJqtvxC6Rzvh" crossorigin="anonymous"></script>
 
@@ -188,6 +199,97 @@ function toggleMobileNav() {
   navContent.classList.toggle('show');
 }
 </script>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 2 </h1>
+      <br>
+      <h3> 
+        <?php function displayServerInfo($key) {
+            if (isset($_SERVER[$key])) {
+                echo "<p>$key: " . $_SERVER[$key] . "</p>";
+            } else {
+                echo "<p>$key: Not available</p>";
+            }
+          }
+
+          displayServerInfo("HTTP_USER_AGENT");
+          displayServerInfo("SERVER_NAME");
+          displayServerInfo("SERVER_PROTOCOL");
+        ?>
+      <h3>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 3 </h1>
+      <br>
+      <h3> 
+          <?php
+            echo "Blimmy it worked!";
+          ?>
+      <h3>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 4 </h1>
+      <br>
+      <h3> 
+      <?php
+        echo gmdate("D");
+        echo "<br>";
+        echo gmdate("d m Y");
+        echo "<br>";
+        echo gmdate("z");
+      ?>
+      <h3>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 5 </h1>
+      <br>
+      <h3> 
+          
+      <h3>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 6 </h1>
+      <br>
+      <h3> 
+          
+      <h3>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="tasks">
+    <div class="task-content">
+      <h1> Excercise 7 </h1>
+      <br>
+      <h3> 
+          
+      <h3>
+    </div>
+  </div>
+  
+  <br>
 
 </body>
 </html>
