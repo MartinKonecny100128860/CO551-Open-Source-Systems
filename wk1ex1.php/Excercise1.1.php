@@ -11,6 +11,7 @@
 <style>
   body {
     margin: 0;
+    padding: 0 5px;
     font-family: 'Oswald', sans-serif; /* Change font to Oswald Medium */
     background-color: #ffffff; /* Dark blue */
   }
@@ -67,16 +68,23 @@
 
 .navbar ul li {
   margin-right: 20px;
+  display: inline-block; /* Change to inline-block for proper alignment */
 }
 
-.navbar ul li:last-child {
-  margin-right: 0;
+.navbar ul li:first-child {
+  margin-left: 0; /* Remove margin-left for the first item */
 }
 
 .navbar a {
   text-decoration: none;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Adjusted padding */
+  display: inline-block; /* Added display property */
+}
+.navbar a:hover {
+  background-color: #555; /* Changed hover background color */
+  padding: 10px 20px; /* Match the padding with the regular state */
+  border-radius: 5px; /* Added border radius for rounded corners */
 }
 
 /* Styles for mobile navigation */
@@ -144,6 +152,40 @@
 .navbar:hover {
   background-color: #333;
 }
+
+table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        border: 2px solid black;
+    }
+    th, td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: left;
+    }
+    th {
+        background-color: #9999cc; /* Changed color for header row */
+        color: black; /* Text color for header row */
+    }
+    tr:nth-child(even) {
+        background-color: #dddddd; /* Changed color for even rows */
+    }
+    tr:hover {
+        background-color: white; /* Changed color for hover */
+    }
+    td:first-child {
+        width: 10%; /* Set width for Excercise column */
+    }
+    /* Centering exercise numbers */
+    td.exercise {
+        text-align: center;
+    }
+    tr:nth-child(3), /* Rows 3, 5, and 7 to have the same color */
+    tr:nth-child(5),
+    tr:nth-child(7) { /* Row to be changed to #ccccff */
+        background-color: #ccccff;
+    }
 </style>
 </head>
 <body>
@@ -159,6 +201,7 @@
   <nav class="navbar">
     <div class="desktop-nav">
       <ul>
+      <li><a href="Index.html">Home</a></li>
       <li><a href="Excercise1.php">Introduction</a></li>
         <li><a href="Excercise1.1.php">Week 1</a></li>
         <li><a href="Excercise2.php">Week 2</a></li>
@@ -183,10 +226,13 @@
         <button>Week 8</button>
       </div>
     </div>
+    <img src="https://www.php.net/images/logos/new-php-logo.svg" alt="PHP Logo" style="height: 40px;">
   </nav>
 
+
   <div class="title">
-    <h1>WELCOME TO MY PHP EXERCISES</h2>
+    <h1>WEEK 1 - INTRODUCTION TO PHP</h1>
+    <h2> Excercise 1 is located in Introduction page! </h2>
   </div>
   
 <!-- Import Bootstrap JS -->
@@ -200,94 +246,92 @@ function toggleMobileNav() {
 }
 </script>
 
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 2 </h1>
-      <br>
-      <h3> 
-        <?php function displayServerInfo($key) {
+<table>
+  <tr>
+    <th style="width: 10%;">Excercise</th> <!-- Adjusted width for the Excercise column -->
+    <th>Description</th>
+    <th>Code</th>
+  </tr>
+
+  <tr>
+    <td class="exercise">2</td>
+    <td>Display server information</td>
+    <td>
+        <?php
+        function displayServerInfo($key) {
             if (isset($_SERVER[$key])) {
                 echo "<p>$key: " . $_SERVER[$key] . "</p>";
             } else {
                 echo "<p>$key: Not available</p>";
             }
-          }
+        }
 
-          displayServerInfo("HTTP_USER_AGENT");
-          displayServerInfo("SERVER_NAME");
-          displayServerInfo("SERVER_PROTOCOL");
+        displayServerInfo("HTTP_USER_AGENT");
+        displayServerInfo("SERVER_NAME");
+        displayServerInfo("SERVER_PROTOCOL");
         ?>
-      <h3>
-    </div>
-  </div>
-  
-  <br>
-
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 3 </h1>
-      <br>
-      <h3> 
-          <?php
-            echo "Blimmy it worked!";
-          ?>
-      <h3>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 4 </h1>
-      <br>
-      <h3> 
-      <?php
+    </td>
+  </tr>
+  <tr>
+    <td class="exercise">3</td>
+    <td>Display "Blimmy it worked!"</td>
+    <td>
+        <?php
+        echo "Blimmy it worked!";
+        ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="exercise">4</td>
+    <td>Display current date and time</td>
+    <td>
+        <?php
         echo gmdate("D");
         echo "<br>";
         echo gmdate("d m Y");
         echo "<br>";
         echo gmdate("z");
-      ?>
-      <h3>
-    </div>
-  </div>
-
-  <br>
-
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 5 </h1>
-      <br>
-      <h3> 
-          
-      <h3>
-    </div>
-  </div>
-  
-  <br>
-
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 6 </h1>
-      <br>
-      <h3> 
-          
-      <h3>
-    </div>
-  </div>
-  
-  <br>
-
-  <div class="tasks">
-    <div class="task-content">
-      <h1> Excercise 7 </h1>
-      <br>
-      <h3> 
-          
-      <h3>
-    </div>
-  </div>
+        ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="exercise">5</td>
+    <td>Concatenate first and last name with a space</td>
+    <td>
+        <?php
+        $firstname = "Richard";
+        $lastname = "Mather";
+        $space = " ";
+        $name = $firstname . $space . $lastname;
+        echo $name;
+        ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="exercise">6</td>
+    <td>Calculate gross wage</td>
+    <td>
+        <?php
+        $hourlyrate = 5.75;
+        $hoursperweek = 40;
+        $gross = $hourlyrate * $hoursperweek;
+        echo $gross;
+        ?>
+    </td>
+  </tr>
+  <tr>
+    <td class="exercise">7</td>
+    <td>Calculate net wage after tax</td>
+    <td>
+        <?php
+        $taxRate = 0.22; // 22% tax rate
+        $taxAmount = $gross * $taxRate;
+        $net = $gross - $taxAmount;
+        echo $net;
+        ?>
+    </td>
+  </tr>
+</table>
   
   <br>
 
